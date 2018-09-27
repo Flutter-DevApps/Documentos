@@ -109,7 +109,7 @@ Atualmente a equipe do Dart libera dois tipos de releases, um estável (**stable
     
     Descompacta no local preferido (nos próximos passos, vou detalhar esse modo de instalação).
 
-## Configurando o ambiente Dart (Detalhando o mode zip de instalação - Meu preferido!)
+## Configurando o ambiente Dart (Detalhando o mode zip de instalação no Linux - Meu preferido!)
 
 ### Configuração do local de instalação
 
