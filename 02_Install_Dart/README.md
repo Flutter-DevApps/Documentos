@@ -2,7 +2,7 @@
 
 Olá galera do Flutter-DevApps!
 
-Há um mês atrás eu criei um guia para iniciantes em Flutter que ensinava a criar um ambiente para começar a criar seus App (pode ser consultado em [01_Install_Flutter/README.md](../01_Install_Flutter/README.md). E como vocês já sabem, para criar os aplicativos usando a SDK Flutter, precisamos codificar a aplicação em Dart… Ops, eu não ensinei a instalar o Dart antes, e como nossa aplicação de exemplo funcionou? 
+Há um mês atrás eu criei um guia para iniciantes em Flutter que ensinava a criar um ambiente para começar a desenvolver seus Apps (pode ser consultado em [01_Install_Flutter/README.md](../01_Install_Flutter/README.md). E como vocês já sabem, para criar os aplicativos usando a SDK Flutter, precisamos codificar a aplicação em Dart… Ops, eu não ensinei a instalar o Dart antes, e como nossa aplicação de exemplo funcionou? 
 
 Simplesmente porque no SDK do Flutter, vem embutida o pacote do SDK Dart!
 Se observar no passo que uso o comando “flutter doctor -v” é exibido um check de OK na verificação do sdk do Dart
@@ -21,7 +21,7 @@ Se observar no passo que uso o comando “flutter doctor -v” é exibido um che
             On Arch: pacman -S lib32-libstdc++5
 ```
 
-Observem que a versão da época era a Dart version 2.1.0-dev.1.0.flutter-69fce633b7, e você pode consultar essa verão no diretório $FLUTTER_HOME/bin/cache/dart-sdk!
+Observem que a versão do Dart da época era a 2.1.0-dev.1.0.flutter-69fce633b7, e você pode consultar essa verão no diretório $FLUTTER_HOME/bin/cache/dart-sdk!
 
 E podemos usar essa versão para construir nossas aplicações em Dart? Opa! Claro!!!
 
@@ -36,7 +36,7 @@ Também não sei se notaram, mas nossa variável de ambiente $FLUTTER_HOME apont
 
 Ou seja, amanhã pode surgir uma 3 do Dart que quebre a compatibilidade com o Flutter v0.7.0 e force a equipe do Flutter a ter que criar uma versão v1.0.0 com o novo Dart.
 
-Mas isso não afetaria minha aplicação e ela deixaria de funcionar? Não se você continuar na versão v0.7.0 do Flutter e usando o Dart embutido nele que está na versão 2.1.0! E provavelmente a equipe do Fluuter ainda dará suporte por um tempo nesta versão e um prazo para que todos migrem para a nova versão. Isso é normal de ocorrer em qualquer ambiente e linguagem de programação, então não fique apreensivo!
+Mas isso não afetaria minha aplicação e ela deixaria de funcionar? Não se você continuar na versão v0.7.0 do Flutter e usando o Dart embutido nele que está na versão 2.1.0! E provavelmente a equipe do Fluuter ainda dará suporte por um tempo nesta versão e um prazo para que todos migrem para a nova versão. Isso é normal de ocorrer em qualquer ambiente e linguagem de programação, então não fiquem apreensivos!
 
 Bom, então sempre vou usar a versão embutida no Flutter pra criar minhas aplicações em Dart e isso vai resolver todos os meus problemas! Opa, também não é bem assim… Se você estivar usando aplicações em Flutter eu também recomendo isso, porém o Dart é uma linguagem de programação e não serve apenas pra criar seus Apps, não é? 
 
@@ -66,7 +66,7 @@ Atualmente a equipe do Dart libera dois tipos de releases, um estável (**stable
 
 #### 1.2. Utilizando o bom e velho wizard
 
-	Acessa o endereço http://www.gekorm.com/dart-windows/, faz o download do exe e manda bala!
+    Acessa o endereço http://www.gekorm.com/dart-windows/, faz o download do exe e manda bala!
 
 	
 ### 2. Instalação no Debian e derivados (como Ubunut, Mint e etc)
@@ -100,12 +100,12 @@ Atualmente a equipe do Dart libera dois tipos de releases, um estável (**stable
 
 ### 4. Instalação no formato Zip
 
-	Acesse o endereço https://www.dartlang.org/tools/sdk/archive, faça o download do zip stable ou dev para a arquitetura correta do seu ambiente.
-	No meu caso, selecionei no Dev channel:
-		Versão 2.1.0-dev.5.0
-		OS: Linux (para meu Fedora 28)
-		Arch: 64-bit
-		Link: https://storage.googleapis.com/dart-archive/channels/dev/release/2.1.0-dev.5.0/sdk/dartsdk-linux-x64-release.zip
+    Acesse o endereço https://www.dartlang.org/tools/sdk/archive, faça o download do zip stable ou dev para a arquitetura correta do seu ambiente.
+    No meu caso, selecionei no Dev channel:
+	Versão 2.1.0-dev.5.0
+	OS: Linux (para meu Fedora 28)
+	Arch: 64-bit
+	Link: https://storage.googleapis.com/dart-archive/channels/dev/release/2.1.0-dev.5.0/sdk/dartsdk-linux-x64-release.zip
     
     Descompacta no local preferido (nos próximos passos, vou detalhar esse modo de instalação).
 
