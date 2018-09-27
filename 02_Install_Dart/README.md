@@ -41,6 +41,7 @@ Mas isso não afetaria minha aplicação e ela deixaria de funcionar? Não se vo
 Bom, então sempre vou usar a versão embutida no Flutter pra criar minhas aplicações em Dart e isso vai resolver todos os meus problemas! Opa, também não é bem assim… Se você estivar usando aplicações em Flutter eu também recomendo isso, porém o Dart é uma linguagem de programação e não serve apenas pra criar seus Apps, não é? 
 
 ![Plataformas](../_images/plataformas.jpg "Plataformas que rodam Dart!")
+
 Plataformas onde podemos rodar aplicações escritas em Dart.
 
 
