@@ -164,7 +164,7 @@ Verificando a versão instalada
 
 ## O que tem no SDK?
 
-O SDK Dart contém um diretório **lib** que contém as bibliotecas do Dart e um diretório **bin** que contém as seguintes comandos:
+O SDK Dart vem com um diretório **lib** que contém as bibliotecas do Dart e um diretório **bin** que contém as seguintes comandos:
 
     $ ls $DART_HOME/bin
 
