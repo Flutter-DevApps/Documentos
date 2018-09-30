@@ -2,9 +2,9 @@
 
 Olá galera do Flutter-DevApps!
 
-Há um mês atrás eu criei um guia para iniciantes em Flutter que ensinava a criar um ambiente para começar a desenvolver seus Apps (pode ser consultado em [01_Install_Flutter/README.md](../01_Install_Flutter/README.md). E como vocês já sabem, para criar os aplicativos usando a SDK Flutter, precisamos codificar a aplicação em Dart… Ops, eu não ensinei a instalar o Dart antes, e como nossa aplicação de exemplo funcionou? 
+Há um mês atrás eu criei um guia para iniciantes em Flutter que ensinava a criar um ambiente para começar a desenvolver seus Apps (pode ser consultado em [01_Install_Flutter/README.md](../01_Install_Flutter/README.md)). E como vocês já sabem, para criar os aplicativos usando a SDK Flutter, precisamos codificar a aplicação em Dart… Ops, eu não ensinei a instalar o Dart antes, e como nossa aplicação de exemplo funcionou? 
 
-Simplesmente porque no SDK do Flutter, vem embutida o pacote do SDK Dart!
+Simplesmente porque o pacote do SDK Dart embutido no SDK do Flutter!
 Se observar no passo que uso o comando “flutter doctor -v” é exibido um check de OK na verificação do sdk do Dart
 
 ```
@@ -68,6 +68,7 @@ Atualmente a equipe do Dart libera dois tipos de releases, um estável (**stable
 
     Acessa o endereço http://www.gekorm.com/dart-windows/, faz o download do exe e manda bala!
 
+![WizardInstall](../_images/windows-installer-wizard.png)
 	
 ### 2. Instalação no Debian e derivados (como Ubunut, Mint e etc)
 

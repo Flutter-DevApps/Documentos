@@ -13,14 +13,14 @@ Bom, só olhando para a imagem acima você já pode notar que aprendendo Dart vo
 
 - Pode atuar em aplicações escritas para rodar em linha de comando (tipo script ou processamento batch mais rebuscadas) ou server-side processando requisições nos mais diversos tipos de protocolos (HTTP, HTTPS, WebSocket e etc). Podendo também se comunicar com banco de dados tradicionais e/ou NoSQL, Mensageria, FileSystem e outros;
 
-- Aplicações Web que rodam nos diversos Browsers parecendo JavaScript, onde é importado uma engine no formato de biblioteca que interpreta o código Dart ou podemos simplesmente converter nosso código Dart para JavaScript (o qual os Browser já possuem seus interpretadores nativos) usando umas das ferramentas do SDK;  REVER
+- Em aplicações Web, convertendo nosso código Dart para JavaScript (o qual os Browser já possuem seus interpretadores nativos) através de uma ferramenta do SDK ou usando frameworks como o AngulaDart desenvolvido pela Google que lhe permite substituir o TypeScript pelo Dart;
 
 - Fazer aplicações para rodar nos celulares Android e IOS, gerando códigos nativos para as duas plataformas com excelente qualidade e performance.
 
-- E quem sabe até aplicações Desktop com ajuda do [Electron](https://electronjs.org/) que dá suporte a aplicações Web rodarem como se fosse aplicações desktop fornecendo APIs que se comunicam com o SO hospedeiro ou através projeto da Google (porém sem suporte oficial e também não pertencente a equipe do Flutter) [flutter-desktop-embedding](https://github.com/google/flutter-desktop-embedding) em conjunto com o projeto [Custom Flutter Engine-Embedders](https://github.com/flutter/engine/wiki/Custom-Flutter-Engine-Embedders) que oferece aos desenvolvedores uma série de API e ferramentas para que possamos criar nossos próprios adaptadores para quaisquer ambientes que não seja Android ou IOS (pois esse já são desenvolvidos pela equipe do Flutter).
+- E quem sabe até aplicações Desktop com ajuda do [Electron](https://electronjs.org/) que dá suporte a aplicações Web rodarem como se fosse aplicações desktop fornecendo APIs que se comunicam com o SO hospedeiro ou através projeto da Google (porém sem suporte oficial e também não pertencente a equipe do Flutter) [flutter-desktop-embedding](https://github.com/google/flutter-desktop-embedding) em conjunto com o projeto [Custom Flutter Engine-Embedders](https://github.com/flutter/engine/wiki/Custom-Flutter-Engine-Embedders) que oferece aos desenvolvedores uma série de API e ferramentas, para que possamos criar nossos próprios adaptadores para quaisquer ambientes que não seja Android ou IOS (pois esse já são desenvolvidos pela equipe do Flutter).
 
 
-**Vale lembrar** que ser um desenvolvedor fullstack não é apenas isso! O cabra tem que ter atitude, conhecer muito de tecnologia e de arquitetura de aplicações, desenrolar bem usando outras ferramentas relacionadas ao desenvolvimento de software tipo Docker, Cloud, Monitoração de aplicações, Performance, etc etc etc e os cambaus! **{{{(>_<)}}}**
+**Vale lembrar** que ser um desenvolvedor fullstack não é apenas isso! O "cabra" tem que ter atitude, conhecer muito de tecnologia e de arquitetura de aplicações, desenrolar bem usando outras ferramentas relacionadas ao desenvolvimento de software tipo Docker, Cloud, Monitoração de aplicações, Performance, etc etc etc e os cambaus! **{{{(>_<)}}}**
 
 
 E não tem como falar sobre as Plataformas e VM do Dart sem entra no detalhe do que compõe a SDK. Se você viu a última postagem ou seguiu o link acima, notou que o SDK tem dois diretórios principais: 
@@ -32,7 +32,6 @@ E não tem como falar sobre as Plataformas e VM do Dart sem entra no detalhe do 
         drwxr-xr-x  2 hendi hendi  4096 set  7 12:07 collection
         drwxr-xr-x  2 hendi hendi  4096 set 19 14:38 core
         drwxr-xr-x  2 hendi hendi  4096 set 19 14:38 io
-        drwxr-xr-x  3 hendi hendi  4096 mai  9 05:26 js
         drwxr-xr-x  2 hendi hendi  4096 jul 23 12:15 math
         ...
 
@@ -64,4 +63,4 @@ Para este documento não ficar muito extenso e cansativo para a gente, irei cria
 
 - [Dart no desktop](DartInDesktop.md)
 
-*Boa leitura e até a próxima!*
+***Boa leitura e até a próxima!***
