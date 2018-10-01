@@ -66,7 +66,7 @@ Seguindo a estrutura de diretórios que convencionamos, vou criar o diretório a
 
 ## Menor código de Server-Side
 
-Apresento pra vocẽs o menor código server-side em Dart, o famoso "Hello, World". Vou criar o arquivo dart server-hello-world.dart com este exemplo.
+Apresento pra vocẽs o menor código server-side em Dart, o famoso "Hello, World". Criei um arquivo dart server-hello-world.dart com este exemplo.
 
     import 'dart:io';
 
@@ -86,9 +86,9 @@ Apresento pra vocẽs o menor código server-side em Dart, o famoso "Hello, Worl
 
 A class HttpServer do Dart é uma extensão da class Stream que recebe eventos de HttpRequest.
 
-abstract class HttpServer implements Stream<HttpRequest>
+***abstract class HttpServer implements Stream<HttpRequest>***
 
-E toda classe que estende de Stream precisa implemantar o método listen, esse método que deve iniciar o Stream e receber uma função de Callback que irá tratar as requisições e consequentemente devolver uma resposta para cada. E é justamente isso que o trecho abaixo está fazendo.
+E toda classe que estende de Stream precisa implemantar o método listen, esse método que deve iniciar o Stream e receber uma função de Callback que irá tratar os eventos (requisições no caso de HttpServer) e consequentemente devolver uma resposta para cada. E no trecho abaixo estamos registrando uma função de callback.
 
     server.listen((request) {
         request.response.write('Hello, world!');
@@ -116,7 +116,7 @@ Chamada do programa.
     Listening on localhost:4040
     Término do método main!
 
-Esse é um dos **cuidados** ao usar os Stream e Observable no Dart, assim como no JavaScript. Se vpcê deixa um Stream aberto ele não deixa que a VM do Dart termine pois fica um Stream sendo processado na VM com sua respectiva função de callback. 
+Esse é um dos **cuidados** que devemos ter ao usar os Stream e Observable no Dart, assim como no JavaScript. Se você deixa um Stream aberto ele não deixa que a VM do Dart termine pois fica um Stream sendo processado na VM com sua respectiva função de callback. 
 
 Em muito caso isso pode dar problemas de [memory leak](https://pt.wikipedia.org/wiki/Vazamento_de_mem%C3%B3ria) em sua aplicação! A criação de muitos Stream sem ter o cuidado de encerrá-los no momento certo.
 
@@ -140,7 +140,7 @@ Uma forma mais elegante de implementar esse trecho é a forma abaixo:
             ..close();
     }
 
-É como o for chamasse o listen do server, e a cada requisição o request é passado para a iteração do for. 
+É como o 'for' chamasse o listen do server, e a cada evento (requisição) é passado para a iteração do 'for'. 
 
 Outra observação é a utilização de [Method Cascading](https://en.wikipedia.org/wiki/Method_cascading) na construção do response (veja mais em https://en.wikipedia.org/wiki/Fluent_interface e https://en.wikipedia.org/wiki/Method_chaining).
 
@@ -148,9 +148,9 @@ Outra observação é a utilização de [Method Cascading](https://en.wikipedia.
 
 ## Criando nosso programa Server-Side
 
-Nosso exemplo será de um CRUD da entidade Pessoa, mas por enquanto não vamos fazer acesso a banco de dado. Todos os dados serão armazenados em memória.
+Nosso exemplo será de um [CRUD](https://pt.wikipedia.org/wiki/CRUD) da entidade Pessoa, mas por enquanto não vamos fazer acesso a banco de dado. Todos os dados serão armazenados em memória.
 
-Numa outra oportunidade abordaremos a persistência em banco, mas o objetivo agora é mostrar apenas como funciona uma aplicação Server-Side simples.
+Numa outra oportunidade abordaremos a persistência em banco, mas o objetivo agora é demonstrar apenas como funciona uma aplicação Server-Side simples.
 
 ### Entidade Pessoa
 
@@ -166,13 +166,13 @@ A function controller, que deveria conter as regras de negócio da entidade Pess
 
 ### A funcão Router de Pessoa
 
-A function router ficou responsável por tratar as requisições (HttpRequest) e delegando ao controller e escrever as respostas (HttpResponse) com os dados obtidos do também do controller.
+A function router ficou responsável por tratar as requisições (HttpRequest), delegar ao controller e escrever as respostas (HttpResponse) com os dados obtidos.
 
 ![Function Controller](../_images/code_serverside_pessoa_controller.png)
 
 ### A funcão Main Server
 
-Responsável por inicia o serviço na porta 8080 e delegar as requisições (HttpRequest) para a function Router.
+Responsável por iniciar o serviço na porta 8080 e delegar as requisições (HttpRequest) para a function Router.
 
 ![Function Server](../_images/code_serverside_server.png)
 
@@ -191,14 +191,13 @@ E para testar eu usei o plugin do Google Chrome chamdado Restlet
 
 Bom, acho que o objetivo deste post com cumprido e deu pra demonstrar de forma simples como implementar um serviço Rest usando o Dart.
 
-Usei apenas as APIs que vem com o SDK do Dart, e por isso precisei criar umas coisas na 'big hand'! Por exemplo, se eu fosse realmente criar um API Rest para colocar em produção eu usaria uma API especialista para isso e facilitaria minha vida na criação das rotas como o projeto [Aqueduct - https://aqueduct.io/](https://aqueduct.io/docs/tut/getting-started/). 
+Usei apenas as APIs que vem no SDK do Dart, e por isso precisei criar umas coisas na 'big hand'! Por exemplo, se eu fosse realmente criar um API Rest para colocar em produção eu usaria uma API especialista para isso, e não perderia tanto tempo configurando/tratando as rotas (confesso que ficou um coisa feia esse tratamento, mas fazer o quê? kkk). Exemplo de API para isso é o projeto [Aqueduct - https://aqueduct.io/](https://aqueduct.io/docs/tut/getting-started/). 
 
-O legal deste projeto da Aqueduct também tem uma API de persistencia de dados ORM usando Postgres [Aqueduct ORM](https://aqueduct.io/docs/getting_started/#using-the-aqueduct-orm)
+O legal deste projeto da Aqueduct é que também tem uma API de persistencia de dados ORM usando Postgres [Aqueduct ORM](https://aqueduct.io/docs/getting_started/#using-the-aqueduct-orm).
 
+Fica mais uma curiosidade pra vocês... iniciem o servidor com a linha de comando abaixo.
 
-Fica mais uma curiosidade pra vocês, iniciem o servidor com a linha de comando abaixo.
-
-    dart --observe http-server.dart
+    dart **--observe** http-server.dart
 
 O parâmetro --observe inicia um servidor na porta padrão 8181 que você pode monitorar a VM e tudo que está rodando nela. Mas só foi uma dica para vocês irem fuçando, pois farei um post sobre o Observe mais pra frente!
 
