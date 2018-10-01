@@ -2,7 +2,7 @@
 
 Olá Galera do Flutter-DevApps, hoje vamos complicar um pouco as coisas neste exemplo. ¯\_(ツ)_/¯
 
-Assim como o exemplo do command-line não vou entrar em detalhes do uso da APIs e nem dos estilos de programação utilizada no Dart. Claro que podemos pontuar algumas coisas pra vocês não ficarem viajando muito e acabar se desinteressando em continuar nos estudos.
+Assim como o exemplo do command-line, não vou entrar em detalhes do uso da APIs e nem dos estilos de programação utilizada no Dart. Claro que podemos pontuar algumas coisas pra vocês não ficarem viajando muito e acabar se desinteressando em continuar nos estudos.
 
 Pra começar recomendo fortemente a leitura dos links abaixo sobre Future, Stream e programação reativa:
 
