@@ -4,17 +4,17 @@ Olá Galera do Flutter-DevApps, hoje vamos complicar um pouco as coisas neste ex
 
 Assim como o exemplo do command-line, não vou entrar em detalhes do uso da APIs e nem dos estilos de programação utilizada no Dart. Claro que podemos pontuar algumas coisas pra vocês não ficarem viajando muito e acabar se desinteressando em continuar nos estudos.
 
-Pra começar recomendo fortemente a leitura dos links abaixo sobre Future, Stream e programação reativa:
+Pra começar, recomendo fortemente a leitura dos links abaixo sobre Future, Stream e programação reativa:
 
 ## Uma breve explicação sobre programação Reativa
 
 Mas porque vamos falar sobre programação reativa neste simples exemplo de aplicação Server-Side?
 
-Isso porque assim como o JavaScript, o Dart é uma linguagem de programação single-threaded. Se algum código bloquear o encadeamento de execução (por exemplo, executando um cálculo ou bloqueio de longa execução na E/S), o programa congelará.
+Isso porque, assim como o JavaScript, o Dart é uma linguagem de programação single-threaded. Se algum código bloquear o encadeamento de execução (por exemplo, executando um cálculo ou bloqueio de longa execução na E/S), o programa congelará.
 
-As operações assíncronas permitem que o seu programa conclua outro trabalho enquanto aguarda a conclusão de uma operação. O Dart usa objetos Future para representar operações assíncronas.
+Nestes tipos de linguaguem as operações assíncronas permitem que o seu programa conclua outro trabalho enquanto aguarda a conclusão de uma outra operação. O Dart usa objetos Future e Stream para representar operações assíncronas.
 
-Então quando criamos uma aplicação Server-Side que vai ficar escultando requisições em uma porta no servidor, precisamos que ele atenda a múltiplas requisições dos clientes, e isso no Java isso seria resolvido facilmente com a utilização de [Threads](https://pt.wikipedia.org/wiki/Thread_(computa%C3%A7%C3%A3o)) (precessamento em paralelo com a Thread principal da aplicação). Mas no JavaScript ou no Dart as requisições são tratadas de forma serial (uma após a outra), e para amenizar esse problema o estilo de programação Reativa nos ajuda a ficar delegando a funções de [callback](https://en.wikipedia.org/wiki/Callback_(computer_programming)) os resultados das operações assim que elas estiverem prontas (isso se aplica também a requisições http, acesso a bancos de dados, ou qualquer outra api que implemente este estilo).
+E quando criamos uma aplicação Server-Side que vai ficar escultando requisições em uma porta no servidor, precisamos que ele atenda a múltiplas requisições dos clientes, e isso no Java isso seria resolvido facilmente com a utilização de [Threads](https://pt.wikipedia.org/wiki/Thread_(computa%C3%A7%C3%A3o)) (precessamento em paralelo com a Thread principal da aplicação). Mas no JavaScript ou no Dart as requisições são tratadas de forma serial (uma após a outra), e para amenizar esse problema o estilo de programação Reativa nos ajuda a ficar delegando a funções de [callback](https://en.wikipedia.org/wiki/Callback_(computer_programming)) os resultados das operações assim que elas estiverem prontas (isso se aplica também a requisições http, acesso a bancos de dados, ou qualquer outra api que implemente este estilo).
 
 E no Dart temos duas classes nativas que nos ajudam no tratamento de programação reativa, são elas (existem outras por trás, mas são elas as principais):
 
