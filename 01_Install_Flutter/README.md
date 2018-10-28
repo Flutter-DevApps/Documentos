@@ -61,7 +61,7 @@ Para essa aplicação de apredizagem iremos trabalhar com a versão DEV do Flutt
 
 ### Ambiente Linux
 
-No endereço [https://flutter.io/setup-linux/](https://flutter.io/setup-linux/) você vai encontrar o "Get Started" para fazer todas fua configuraçã, mais vamos fazer um resumo aqui.. :P.
+No endereço [https://flutter.io/setup-linux/](https://flutter.io/setup-linux/) você vai encontrar o "Get Started" para fazer todas sua configuração, mais vamos fazer um resumo aqui.. :P.
 
 Acesse o endereço https://flutter.io/sdk-archive/#linux, baixe o arquivo no diretório informado abaixo e depois descompacte-o.
 
