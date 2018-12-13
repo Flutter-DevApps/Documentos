@@ -27,7 +27,7 @@ Para facilitar o desenvolvimento, vou sugerir criar alguns diretórios para melh
 
     $ mkdir -p ~/desenv/ide/android-studio; # Local de descompactação do Android Studio
     $ mkdir -p ~/desenv/ide/vscode; # Local de descompactação do Visual Code
-    $ mkdir -p ~/desenv/sdk/flutter; # Local de descompactação do Flutter v0.7.0
+    $ mkdir -p ~/desenv/sdk/flutter; # Local de descompactação do Flutter v1.0.0
     $ mkdir -p ~/desenv/sdk/android; # Local de descompactação do Android SDK
     $ mkdir -p ~/desenv/sdk/jdk; # Local de descompactação do JDK 1.8
     $ mkdir -p ~/desenv/projects/biblioteca-virtual/android; # Workspace do Android Studio (validação da instalação do Android Studio)
@@ -57,71 +57,72 @@ E no final do arquivo ~/.bash_profile ou ~/.profile (vai depender de sua distro 
 
 ## Instalação do SDK Flutter
 
-Para essa aplicação de apredizagem iremos trabalhar com a versão DEV do Flutter, que está na versão v0.7.0.
+Para essa aplicação de apredizagem iremos trabalhar com a versão estável recem lançada 1.0.0 do Flutter.
 
 ### Ambiente Linux
 
-No endereço [https://flutter.io/setup-linux/](https://flutter.io/setup-linux/) você vai encontrar o "Get Started" para fazer todas fua configuraçã, mais vamos fazer um resumo aqui.. :P.
+No endereço [https://flutter.io/setup-linux/](https://flutter.io/setup-linux/) você vai encontrar o "Get Started" para fazer toda sua configuração, mais vamos fazer um resumo aqui.. :P.
 
 Acesse o endereço https://flutter.io/sdk-archive/#linux, baixe o arquivo no diretório informado abaixo e depois descompacte-o.
 
-    $ mv ~/Downloads/flutter_linux_v0.7.0-dev.tar.xz ~/desenv/sdk/flutter/
+    $ mv ~/Downloads/flutter_linux_v1.0.0-stable.tar.xz ~/desenv/sdk/flutter/
     $ cd ~/desenv/sdk/flutter/
-    $ tar -xvf flutter_linux_v0.7.0-dev.tar.xz
-    $ mv flutter v0.7.0
+    $ tar -xvf flutter_linux_v1.0.0-stable.tar.xz
+    $ mv flutter v1.0.0
     
-Obs: Certifique-se que o diretório do java ficou assim ~/desenv/sdk/flutter/v0.7.0
+Obs: Certifique-se que o diretório do flutter ficou assim ~/desenv/sdk/flutter/v1.0.0
 
-E no final do arquivo ~/.bash_profile ou ~/.profile (vai depender de sua distro linux), coloque os trechos abaixo: (após edição do arquivo refazer login no linux)
+E no final do arquivo ~/.bash_profile ou ~/.profile (vai depender de sua distro linux), coloque o trecho abaixo: (após edição do arquivo refazer login no linux)
 
-    FLUTTER_HOME=/home/hendi/desenv/sdk/flutter/v0.7.0
+    FLUTTER_HOME=/home/hendi/desenv/sdk/flutter/v1.0.0
     export FLUTTER_HOME
 
     PATH=$FLUTTER_HOME/bin:$PATH
 
-### Dependencias para o funcionamento do Flutter
+### Dependências para o funcionamento do Flutter
 
 Provavelmente você deve ter entrado no site do flutter e visto que ele é uma SDK (Software Development Kit), ou seja um conjunto de blibliotecas e ferramentas pra você criar aplicações nativas para Andriod e IOS. 
 
-E basicamente você só precisa criar seu app utilizando apenas uma única linguagem de programação, que no final ele converte praticamente tudo em código nativo da plataforma em que você fizer o build.
+E basicamente você só precisa criar seu app utilizando apenas uma única linguagem de programação (Dart), que no final ele faz uma ponte para os componentes nativos e em alguns casos converte em código nativo da plataforma em que você fizer o build.
 
-Então ele vai precisar de algumas dependências para que funcione, e inclusive ele oferece um utilitário para você verificar o que está faltando do seu sistema operacional pra você começar a codificar. Rode o comando abaixo n seu terminal...
+E para que isso funcione, ele precisará de algumas dependênicas (sdk, ferramentas e bibliotecas). Inclusive ele oferece um utilitário para você verificar o que está faltando no seu sistema operacional pra você começar a codificar. 
+
+Rode o comando abaixo n seu terminal...
 
     $ flutter doctor -v
 
 No meu caso a saída do comando foi essa aqui:
 
 ```
-  ➜  v0.7.0 git:(dev) flutter doctor -v
-  [!] Flutter (Channel dev, v0.7.0, on Linux, locale pt_BR.UTF-8)
-      • Flutter version 0.7.0 at /home/hendi/desenv/sdk/flutter/v0.7.0
-      • Framework revision 09fe34708f (2 days ago), 2018-08-22 10:20:51 -0700
-      • Engine revision 4b271b2e02
-      • Dart version 2.1.0-dev.1.0.flutter-69fce633b7
+  ➜  v1.0.0 git:(dev) flutter doctor -v
+    [!] Flutter (Channel stable, v1.0.0, on Linux, locale en_US.UTF-8)
+      • Flutter version 1.0.0 at /home/hendi/desenv/sdk/flutter/v1.0.0
+      • Framework revision 5391447fae (13 days ago), 2018-11-29 19:41:26 -0800
+      • Engine revision 7375a0f414
+      • Dart version 2.1.0 (build 2.1.0-dev.9.4 f9ebf21297)
       ✗ Downloaded executables cannot execute on host.
         See https://github.com/flutter/flutter/issues/6207 for more information
         On Debian/Ubuntu/Mint: sudo apt-get install lib32stdc++6
         On Fedora: dnf install libstdc++.i686
         On Arch: pacman -S lib32-libstdc++5
 
-
-  [✗] Android toolchain - develop for Android devices
+    [✗] Android toolchain - develop for Android devices
       ✗ Unable to locate Android SDK.
         Install Android Studio from: https://developer.android.com/studio/index.html
         On first launch it will assist you in installing the Android SDK components.
         (or visit https://flutter.io/setup/#android-setup for detailed instructions).
         If Android SDK has been installed to a custom location, set $ANDROID_HOME to that location.
 
-  [✗] Android Studio (not installed)
+    [✗] Android Studio (not installed)
       • Android Studio not found; download from https://developer.android.com/studio/index.html
         (or visit https://flutter.io/setup/#android-setup for detailed instructions).
 
-  [!] VS Code (version 1.26.1)
+    [!] VS Code (version 1.29.1)
       • VS Code at /usr/share/code
       • Flutter extension not installed; install from
         https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
 
-  [!] Connected devices
+    [!] Connected devices
       ! No devices available
 
   ! Doctor found issues in 5 categories.
@@ -136,19 +137,19 @@ Bom, vou começar pelo Android Studio!
 
 Como solicitado pelo comando 'flutter doctor', vamos no [link](https://developer.android.com/studio/index.html) fazer o download do Android Studio para começar nossa instalação.
 
-Baixe a versão _**3.1.4 for Linux 64-bit (856 MB)**_ e comece a instalação conforme comandos abaixo.
+Baixe a versão _**3.2 for Linux 64-bit (1006 MB)**_ e comece a instalação conforme comandos abaixo.
 
     cd ~/desenv/ide/android-studio
-    unzip ~/Downloads/android-studio-ide-173.4907809-linux.zip
-    mv android-studio android-studio-ide-173.4907809-linux; # Costumo fazer isso para ter o rastro da versão do binário que eu instalei
-    cd android-studio-ide-173.4907809-linux
+    unzip ~/Downloads/android-studio-ide-181.5014246-linux.zip
+    mv android-studio android-studio-ide-181.5014246-linux; # Costumo fazer isso para ter o rastro da versão do binário que eu instalei
+    cd android-studio-ide-181.5014246-linux
     ./bin/studio.sh
     
 Ao executar este último comando, o Android irá iniciar um wizard de instalação.
 
 Meus passos foram:
 
-    - Não importar nada de configurações e projetos outras versões priviamente instaladas.
+    - Não importar nada de configurações e projetos outras versões previamente instaladas.
     - Next
     - Custom
     - Theme: Darcula (minha prferência)
@@ -212,7 +213,7 @@ Agora ele só pede pra rodar um comamndo pra aceitar as licenças do android.
         • Android NDK location not configured (optional; useful for native profiling support)
         • Platform android-28, build-tools 28.0.2
         • ANDROID_HOME = /home/hendi/desenv/sdk/android
-        • Java binary at: /home/hendi/desenv/ide/android-studio/android-studio-ide-173.4907809-linux/jre/bin/java
+        • Java binary at: /home/hendi/desenv/ide/android-studio/android-studio-ide-181.5014246-linux/jre/bin/java
         • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
         ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
 
@@ -221,7 +222,7 @@ Execute no terminal então o comando solicitado e (y) pra tudo.
     flutter doctor --android-licenses
 
 
-#### 3 - Flutter (Channel dev, v0.7.0, on Linux, locale pt_BR.UTF-8)
+#### 3 - Flutter (Channel dev, v1.0.0, on Linux, locale pt_BR.UTF-8)
 
     ✗ Downloaded executables cannot execute on host
 
@@ -249,38 +250,46 @@ Basta rodar o comando abaixo no terminal.
 Olha que lindo!!! Zero erros!!!
 
     ➜  ~ flutter doctor -v
-    [✓] Flutter (Channel dev, v0.7.0, on Linux, locale pt_BR.UTF-8)
-        • Flutter version 0.7.0 at /home/hendi/desenv/sdk/flutter/v0.7.0
-        • Framework revision 09fe34708f (2 days ago), 2018-08-22 10:20:51 -0700
-        • Engine revision 4b271b2e02
-        • Dart version 2.1.0-dev.1.0.flutter-69fce633b7
+    [✓] Flutter (Channel stable, v1.0.0, on Linux, locale en_US.UTF-8)
+        • Flutter version 1.0.0 at /home/hendi/desenv/sdk/flutter/v1.0.0
+        • Framework revision 5391447fae (13 days ago), 2018-11-29 19:41:26 -0800
+        • Engine revision 7375a0f414
+        • Dart version 2.1.0 (build 2.1.0-dev.9.4 f9ebf21297)
 
     [✓] Android toolchain - develop for Android devices (Android SDK 28.0.2)
         • Android SDK at /home/hendi/desenv/sdk/android
         • Android NDK location not configured (optional; useful for native profiling support)
         • Platform android-28, build-tools 28.0.2
         • ANDROID_HOME = /home/hendi/desenv/sdk/android
-        • Java binary at: /home/hendi/desenv/ide/android-studio/android-studio-ide-173.4907809-linux/jre/bin/java
-        • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+        • Java binary at: /home/hendi/desenv/ide/android-studio/android-studio-ide-181.5014246-linux/jre/bin/java
+        • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
         • All Android licenses accepted.
 
     [✓] Android Studio (version 3.1)
         • Android Studio at /home/hendi/desenv/ide/android-studio/android-studio-ide-173.4907809-linux
-        • Flutter plugin version 27.1.1
-        • Dart plugin version 173.4700
-        • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+        • Flutter plugin version 28.0.2
+        • Dart plugin version 181.5616
+        • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
 
-    [✓] VS Code (version 1.26.1)
+    [✓] Android Studio (version 3.2)
+        • Android Studio at /home/hendi/desenv/ide/android-studio/android-studio-ide-181.5014246-linux
+        • Flutter plugin version 28.0.2
+        • Dart plugin version 181.5616
+        • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
+
+    [✓] VS Code (version 1.29.1)
         • VS Code at /usr/share/code
-        • Flutter extension version 2.17.1
+        • Flutter extension version 2.21.1
 
-    [✓] Connected devices (1 available)
-        • Android SDK built for x86 • emulator-5556 • android-x86 • Android 9 (API 28) (emulator)
+    [✓] Connected device (1 available)
+        • Android SDK built for x86 • emulator-5554 • android-x86 • Android 9 (API 28) (emulator)
 
     • No issues found!
 
+**Observações:**: 
 
-**OBS**: Se no seu ambiente você encontrou outros problemas, nos informe e mostre também como às resolver... Ah! Ajude a criar uma seção de intalaçao em Mac e Windows (Deus me livre! :P).
+- Caso o último item mastrar a falha "[!] Connected device" é porque você não tem nenhum dispositivo conectado na máquiva ou não tem nenhum emulador rodando durante a execução do comando.
+- Se no seu ambiente você encontrou outros problemas, nos informe e mostre também como às resolver... Ah! Ajude a criar uma seção de intalaçao em Mac e Windows (Deus me livre! :P).
 
 
 # Criando uma App Flutter pra validar nossa instalação - Usando o Android Studio
@@ -301,7 +310,7 @@ Chagamos no ponto de criar nosso primeiro App Flutter!!!!
 Acesse o menu File > New > New Flutter Project > Flutter Application e Next
 
     Project name: flutter_app
-    Flutter SDK Path: ~/desenv/sdk/flutter/v0.7.0
+    Flutter SDK Path: ~/desenv/sdk/flutter/v1.0.0
     Project Location: ~/desenv/projetos/biblioteca-virtual
     Description: A new Flutter application.
     Next
