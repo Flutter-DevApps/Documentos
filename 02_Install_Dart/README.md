@@ -91,7 +91,7 @@ Atualmente a equipe do Dart libera dois tipos de releases, um estável (**stable
 
 #### 2.2. Utilizando o bom e velho .deb
 
-    Acessa o endereço https://storage.googleapis.com/dart-archive/channels/stable/release/latest/linux_packages/dart_2.0.0-1_amd64.deb (stable) ou https://storage.googleapis.com/dart-archive/channels/dev/release/latest/linux_packages/dart_2.1.0-dev.5.0-1_amd64.deb (dev), faz o download do .deb do 2.x e manda bala!
+    Acessa o endereço https://storage.googleapis.com/dart-archive/channels/stable/release/latest/linux_packages/dart_2.0.0-1_amd64.deb (stable) ou https://storage.googleapis.com/dart-archive/channels/dev/release/latest/linux_packages/dart_2.1.0-1_amd64.deb (dev), faz o download do .deb do 2.x e manda bala!
 
 
 ### 3. Instalação no Mac (peço sua ajuda para contribuir com esse trecho)
@@ -103,10 +103,10 @@ Atualmente a equipe do Dart libera dois tipos de releases, um estável (**stable
 
     Acesse o endereço https://www.dartlang.org/tools/sdk/archive, faça o download do zip stable ou dev para a arquitetura correta do seu ambiente.
     No meu caso, selecionei no Dev channel:
-	Versão 2.1.0-dev.5.0
+	Versão 2.1.0
 	OS: Linux (para meu Fedora 28)
 	Arch: 64-bit
-	Link: https://storage.googleapis.com/dart-archive/channels/dev/release/2.1.0-dev.5.0/sdk/dartsdk-linux-x64-release.zip
+	Link: https://storage.googleapis.com/dart-archive/channels/dev/release/2.1.0/sdk/dartsdk-linux-x64-release.zip
     
     Descompacta no local preferido (nos próximos passos, vou detalhar esse modo de instalação).
 
@@ -116,25 +116,25 @@ Atualmente a equipe do Dart libera dois tipos de releases, um estável (**stable
 
 Para facilitar o desenvolvimento, vou sugerir criar alguns diretórios para melhor organização do ambiente local. Vou usar essa convenção nos comandos abaixo, se não quiser seguir essa convenção faça adaptações nos comandos a serem executado.
 
-    $ mkdir -p ~/desenv/sdk/dart/2.1.0-dev.5.0; # Local de descompactação do Dart 2.1.0
+    $ mkdir -p ~/desenv/sdk/dart/2.1.0; # Local de descompactação do Dart 2.1.0
 
 
 ### Instalação do SDK Dart
 
-Acesse o endereço https://storage.googleapis.com/dart-archive/channels/dev/release/2.1.0-dev.5.0/sdk/dartsdk-linux-x64-release.zip, baixe o arquivo no diretório informado abaixo e depois descompacte-o.
+Acesse o endereço https://storage.googleapis.com/dart-archive/channels/stable/release/2.1.0/sdk/dartsdk-linux-x64-release.zip, baixe o arquivo no diretório informado abaixo e depois descompacte-o.
 
-    $ mv ~/Downloads/dartsdk-linux-x64-release.zip ~/desenv/sdk/dart/2.1.0-dev.5.0
-    $ cd ~/desenv/sdk/dart/2.1.0-dev.5.0
+    $ mv ~/Downloads/dartsdk-linux-x64-release.zip ~/desenv/sdk/dart/2.1.0
+    $ cd ~/desenv/sdk/dart/2.1.0
     $ unzip dartsdk-linux-x64-release.zip
     $ rm dartsdk-linux-x64-release.zip
     $ mv dart-sdk/* .
     $ rm dart-sdk -rf
     
-Obs: Certifique-se que o diretório do java ficou assim ~/desenv/sdk/dart/2.1.0-dev.5.0
+Obs: Certifique-se que o diretório do java ficou assim ~/desenv/sdk/dart/2.1.0
 
 E no final do arquivo ~/.bash_profile ou ~/.profile (vai depender de sua distro linux), coloque os trechos abaixo: (após edição do arquivo refazer login no linux)
 
-    DART_HOME=/home/<seu usuário>/desenv/sdk/dart/2.1.0-dev.5.0
+    DART_HOME=/home/<seu usuário>/desenv/sdk/dart/2.1.0
     export DART_HOME
 
     PATH=$DART_HOME/bin:$PATH
@@ -160,7 +160,7 @@ Listando os arquivos do local de instalação do Dart
 Verificando a versão instalada    
 
     $ dart --version
-    Dart VM version: 2.1.0-dev.5.0 (Wed Sep 19 19:15:19 2018 +0200) on "linux_x64"
+    Dart VM version: 2.1.0 (Tue Nov 13 18:22:02 2018 +0100) on "linux_x64"
 
 
 ## O que tem no SDK?
